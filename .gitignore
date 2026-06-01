@@ -1,0 +1,8 @@
+.env
+.venv
+.vscode/*
+db.sqlite3
+Accounting/migrations/*
+Employees/migrations/*
+Accounting/__pycache__/*
+Employees/__pycache__/*

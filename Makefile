@@ -8,6 +8,7 @@ clean:
 	rm -rf db.sqlite3
 	rm -rf **/migrations
 	rm -rf **/__pycache__
+	clear
 
 test:
 	python manage.py check

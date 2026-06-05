@@ -34,6 +34,7 @@ class Attendance(models.Model):
 class Leave_Request(models.Model):
     employee = models.ForeignKey(Employee , on_delete=models.CASCADE)
     leave_type = models.CharField(choices=type, default="Sick", max_length=50)
+    applied = models.DateTimeField(auto_now_add=True)
     start_date = models.DateField()
     end_date = models.DateField()
     reason = models.TextField()

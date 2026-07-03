@@ -1,10 +1,6 @@
 from django.db import models
-from Employees.models import Employee
 
 class SalaryStructure(models.Model):
-    employee = models.ForeignKey(Employee,
-                                 on_delete=models.CASCADE,
-                                 related_name='salary_structure')
     basic_salary = models.DecimalField(max_digits=10,
                                        decimal_places=2)
     house_rent_allowance = models.DecimalField(max_digits=10,

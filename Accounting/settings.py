@@ -28,9 +28,14 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'Leave',
+    'Salary',
+    'TaxSlab',
+    'Payroll',
     'Employees',
     'Attendance',
-    'Salary',
+    'Department',
+    'phonenumber_field',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

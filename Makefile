@@ -1,15 +1,28 @@
+SHELL := /bin/bash
+virtual = .venv/bin/activate
+
 setup:
 	clear
 	python -m venv .venv
-	python -m pip install -r requirements.txt
-	python manage.py makemigrations
-	python manage.py migrate
-	python manage.py createsuperuser
+	source $(virtual) && \
+	python -m pip install -r requirements.txt && \
+	python manage.py makemigrations && \
+	python manage.py migrate && \
+	python manage.py createsuperuser && \
 	python manage.py runserver
 
 setup-docker:
 	clear
 	docker compose -f 'compose.yaml' up -d --build
+
+dbbackup-create:
+	python manage.py dbbackup
+
+dbbackup-list:
+	python manage.py listbackups
+
+dbbackup-restore:
+	python manage.py dbrestore
 
 clean:
 	clear
@@ -26,4 +39,4 @@ run:
 	clear
 	python manage.py runserver
 
-PHONY: clean setup test run
+PHONY: clean setup test run dbbackup-create dbbackup-list dbbackup-restore

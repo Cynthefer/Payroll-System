@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'Salary',
     'TaxSlab',
     'Payroll',
+    'dbbackup',
     'Employees',
     'Attendance',
     'Department',
@@ -88,8 +89,11 @@ DATABASES = {
     },
     'production': dj_database_url.config(
         default=os.environ.get('DATABASE_URL')
-    )
+    ),
 }
+
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {'location':'/var/backups/payroll-database'}
 
 
 # Password validation

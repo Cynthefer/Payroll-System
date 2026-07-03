@@ -38,6 +38,7 @@ class Employee(models.Model):
                            on_delete=models.CASCADE)
     hire_date = models.DateField()
     is_active = models.BooleanField(default=True)
+    people = models.Manager()
     
     class Meta:
         db_table = 'Employees'
